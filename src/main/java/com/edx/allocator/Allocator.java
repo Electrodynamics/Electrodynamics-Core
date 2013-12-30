@@ -37,6 +37,15 @@ public final class Allocator{
 		}
 	}
 	
+	public String getRootAllocationTag(Class<?> clazz){
+		try{
+			Constructor<?> c = this.findAllocationConstructor(clazz);
+			return c.getAnnotation(Allocate.class).value();
+		} catch(Exception ex){
+			throw new RuntimeException(ex);
+		}
+	}
+	
 	public <T> T generateAllocationInstance(Class<T> clazz){
 		try {
 			Constructor<T> c = this.findAllocationConstructor(clazz);
