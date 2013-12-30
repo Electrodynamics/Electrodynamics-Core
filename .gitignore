@@ -5,8 +5,8 @@
 !gradle
 !.gitignore
 !LICENSE
-!README.md
+!README
 !build.gradle
 !build.properties
 !gradlew
-!src/
+!src/**
