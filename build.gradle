@@ -13,26 +13,62 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+// Define the properties file
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+version = config.mod_version
+group= "com.edx"
+archivesBaseName = "EDX-Core"
 
 minecraft {
-	version = "1.6.4-9.11.1.964"
+	version = config.minecraft_version + "-" + config.forge_version
+    assetsDir = "run/assets"
 }
 
-processResources
-{
-    // replace stuff in mcmod.info, nothing else
+// Add the build number to the end of the version
+version = "${config.minecraft_version}-${config.mod_version}-b${System.getenv().BUILD_NUMBER}"
+
+processResources {
+    // Replace stuff
     from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod/info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        include '**/*.info'
+        include '**/*.properties'
+
+
+        expand ([
+                'mod_version': project.config.mod_version,
+                'minecraft_version': project.config.minecraft_version,
+                'build_number': project.config.build_number
+        ])
     }
         
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+        exclude '**/*.info'
+        exclude '**/*.properties'
     }
+}
+
+// Name the jars
+jar {
+    manifest {
+        attributes 'FMLCorePlugin': 'com.edx.asm.EDXCorePlugin'
+        attributes 'FMLCorePluginContainsFMLMod': 'true'
+    }
+    appendix = 'universal'
+}
+
+// Add the source code to the jar
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    appendix = 'src'
+}
+
+artifacts {
+    archives sourceJar
 }
