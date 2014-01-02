@@ -1,9 +1,9 @@
-package com.edx.render;
+package com.edx.edxcore.render;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 
-import com.edx.render.vector.Vector3;
+import com.edx.edxcore.render.vector.Vector3;
 
 public abstract class TESR<Tile extends TileEntity> extends TileEntitySpecialRenderer{
 	protected final IModel model;

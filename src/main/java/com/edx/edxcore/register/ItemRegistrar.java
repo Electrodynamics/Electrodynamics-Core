@@ -1,14 +1,14 @@
-package com.edx.register;
+package com.edx.edxcore.register;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-import com.edx.Localizer;
-import com.edx.Validator;
-import com.edx.allocator.Allocator;
-import com.edx.annotation.Localize;
-import com.edx.annotation.Meta;
-import com.edx.exception.RegistrarException;
+import com.edx.edxcore.Localizer;
+import com.edx.edxcore.Validator;
+import com.edx.edxcore.allocator.Allocator;
+import com.edx.edxcore.annotation.Localize;
+import com.edx.edxcore.annotation.Meta;
+import com.edx.edxcore.exception.RegistrarException;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.registry.GameRegistry;

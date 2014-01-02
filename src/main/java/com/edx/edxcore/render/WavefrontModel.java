@@ -1,4 +1,4 @@
-package com.edx.render;
+package com.edx.edxcore.render;
 
 import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;

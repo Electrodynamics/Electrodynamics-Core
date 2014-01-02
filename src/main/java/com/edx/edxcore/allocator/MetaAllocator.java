@@ -1,8 +1,8 @@
-package com.edx.allocator;
+package com.edx.edxcore.allocator;
 
 import java.util.HashMap;
 
-import com.edx.exception.TagNotFoundException;
+import com.edx.edxcore.exception.TagNotFoundException;
 
 public final class MetaAllocator{
 	private final HashMap<String, HashMap<String, Integer>> META_ALLOCATION_CHART = new HashMap<String, HashMap<String, Integer>>();

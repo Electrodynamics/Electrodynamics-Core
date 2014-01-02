@@ -1,11 +1,11 @@
-package com.edx.render;
+package com.edx.edxcore.render;
 
 import net.minecraftforge.common.ForgeDirection;
 
 import org.lwjgl.opengl.GL11;
 
-import com.edx.helpers.RotationHelper;
-import com.edx.render.vector.Vector3;
+import com.edx.edxcore.helpers.RotationHelper;
+import com.edx.edxcore.render.vector.Vector3;
 
 public final class WeightedRotation{
 	private final float theta;

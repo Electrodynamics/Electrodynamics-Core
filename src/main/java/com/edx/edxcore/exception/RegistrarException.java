@@ -1,4 +1,4 @@
-package com.edx.exception;
+package com.edx.edxcore.exception;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

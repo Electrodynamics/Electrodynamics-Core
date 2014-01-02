@@ -1,11 +1,11 @@
-package com.edx.allocator;
+package com.edx.edxcore.allocator;
 
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 
-import com.edx.annotation.Allocate;
-import com.edx.exception.AllocationException;
-import com.edx.exception.TagNotFoundException;
+import com.edx.edxcore.annotation.Allocate;
+import com.edx.edxcore.exception.AllocationException;
+import com.edx.edxcore.exception.TagNotFoundException;
 
 public final class Allocator{
 	private final String name;

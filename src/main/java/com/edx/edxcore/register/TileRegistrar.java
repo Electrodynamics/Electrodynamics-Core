@@ -1,13 +1,13 @@
-package com.edx.register;
+package com.edx.edxcore.register;
 
 import java.lang.reflect.Constructor;
 
 import net.minecraft.tileentity.TileEntity;
 
-import com.edx.Validator;
-import com.edx.annotation.Tile;
-import com.edx.exception.InvalidTileException;
-import com.edx.render.TESR;
+import com.edx.edxcore.Validator;
+import com.edx.edxcore.annotation.Tile;
+import com.edx.edxcore.exception.InvalidTileException;
+import com.edx.edxcore.render.TESR;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 

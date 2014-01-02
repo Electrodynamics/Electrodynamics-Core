@@ -1,4 +1,4 @@
-package com.edx.annotation;
+package com.edx.edxcore.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

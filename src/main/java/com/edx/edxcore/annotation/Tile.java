@@ -1,6 +1,6 @@
-package com.edx.annotation;
+package com.edx.edxcore.annotation;
 
-import com.edx.render.TESR;
+import com.edx.edxcore.render.TESR;
 
 public @interface Tile{
 	String name();

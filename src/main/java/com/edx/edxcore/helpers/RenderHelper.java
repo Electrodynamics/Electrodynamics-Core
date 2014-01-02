@@ -1,8 +1,8 @@
-package com.edx.helpers;
+package com.edx.edxcore.helpers;
 
 import org.lwjgl.opengl.GL11;
 
-import com.edx.render.vector.Vector3;
+import com.edx.edxcore.render.vector.Vector3;
 
 public enum RenderHelper{
 	INSTANCE;

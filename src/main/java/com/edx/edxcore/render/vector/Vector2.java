@@ -1,4 +1,4 @@
-package com.edx.render.vector;
+package com.edx.edxcore.render.vector;
 
 public class Vector2<Type extends Number>{
 	protected final Type x;

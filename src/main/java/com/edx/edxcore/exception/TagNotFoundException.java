@@ -1,6 +1,6 @@
-package com.edx.exception;
+package com.edx.edxcore.exception;
 
-import com.edx.allocator.Allocator;
+import com.edx.edxcore.allocator.Allocator;
 
 public final class TagNotFoundException extends Exception {
 	private static final long serialVersionUID = -8688104416302569063L;

@@ -1,4 +1,4 @@
-package com.edx.render;
+package com.edx.edxcore.render;
 
 public interface IModel{
 	public void render();

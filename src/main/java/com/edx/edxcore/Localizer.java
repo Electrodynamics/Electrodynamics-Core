@@ -1,4 +1,4 @@
-package com.edx;
+package com.edx.edxcore;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
