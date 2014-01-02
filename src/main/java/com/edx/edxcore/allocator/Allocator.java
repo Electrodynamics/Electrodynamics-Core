@@ -4,7 +4,6 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 
 import com.edx.edxcore.annotation.Allocate;
-import com.edx.edxcore.exception.AllocationException;
 import com.edx.edxcore.exception.TagNotFoundException;
 
 public final class Allocator{
@@ -56,16 +55,23 @@ public final class Allocator{
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
-	private final <T> Constructor<T> findAllocationConstructor(Class<T> clazz)
-	throws AllocationException{
-		for(Constructor<?> c : clazz.getDeclaredConstructors()){
+	@SuppressWarnings("unused")
+	private final <T> Constructor<T> findAllocationConstructor(Class<T> clazz){
+		try{
+			Constructor<T> c = clazz.getDeclaredConstructor(Integer.class);
+			
 			if(c.isAnnotationPresent(Allocate.class)){
-				return (Constructor<T>) c;
+				return c;
+			} else{
+				if(c != null){
+					throw new IllegalStateException("Trying to register allocatable class without @Allocate above correct constructor (" + (String.valueOf(c.isAnnotationPresent(Allocate.class)) + ")"));
+				}
 			}
+		} catch(Exception ex){
+			throw new RuntimeException(ex);
 		}
 		
-		throw new AllocationException(this, clazz);
+		throw new IllegalStateException("Couldn't find correct constructor for id injection");
 	}
 	
 	public String getName(){
