@@ -15,14 +15,6 @@ apply plugin: 'forge'
 
 defaultTasks 'clean', 'build'
 
-task <<clean {
-    println 'Cleaning the workspace...'
-}
-
-task <<build {
-    println 'Building...'
-}
-
 // Define the properties file
 ext.configFile = file "build.properties"
 
